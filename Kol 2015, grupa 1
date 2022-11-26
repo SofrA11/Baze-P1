@@ -28,3 +28,8 @@ select predmet.id,predmet.naziv,predmet.tip,predmet.godina,predmet.opis,predmeti
 from predmet left outer join predmeti_na_aukciji on predmet.id=predmeti_na_aukciji.predmet_id
 where predmeti_na_aukciji.prodajna_cena-predmeti_na_aukciji.pocetna_cena < 100
 order by zarada desc;
+
+3.
+select predmet.naziv,predmeti_na_aukciji.prodajna_cena-predmeti_na_aukciji.pocetna_cena as zarada,aukcija.naziv,aukcija.opis
+from predmet join predmeti_na_aukciji on predmet.id=predmeti_na_aukciji.predmet_id join aukcija on aukcija.id=predmeti_na_aukciji.aukcija_id
+where predmet.tip='skulptura';
