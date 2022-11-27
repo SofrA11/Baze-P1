@@ -100,5 +100,5 @@ HAVING COUNT(ISTORIJA_RADNIH_MESTA.ID_ZAP)=( select max(COUNT(ISTORIJA_RADNIH_ME
                                             where RADNO_MESTO.ID=ISTORIJA_RADNIH_MESTA.ID_R_MESTO AND istorija_radnih_mesta.DATUM_POC<>ZAPOSLENI.DAT_POSTAVLJENJA
                                             group by  RADNO_MESTO.NAZIV);
 
-
+5.
 
