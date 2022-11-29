@@ -32,4 +32,5 @@ order by zarada desc;
 3.
 select predmet.naziv,predmeti_na_aukciji.prodajna_cena-predmeti_na_aukciji.pocetna_cena as zarada,aukcija.naziv,aukcija.opis
 from predmet join predmeti_na_aukciji on predmet.id=predmeti_na_aukciji.predmet_id join aukcija on aukcija.id=predmeti_na_aukciji.aukcija_id
-where predmet.tip='skulptura'; 
+where predmet.tip='slika'
+order by datum_otvaranja desc; 
