@@ -34,3 +34,12 @@ select predmet.naziv,predmeti_na_aukciji.prodajna_cena-predmeti_na_aukciji.pocet
 from predmet join predmeti_na_aukciji on predmet.id=predmeti_na_aukciji.predmet_id join aukcija on aukcija.id=predmeti_na_aukciji.aukcija_id
 where predmet.tip='slika'
 order by datum_otvaranja desc; 
+
+4.
+SELECT AUKCIJA.NAZIV,AUKCIJA.DATUM_OTVARANJA
+FROM PREDMET JOIN PREDMETI_NA_AUKCIJI ON PREDMET.ID=PREDMETI_NA_AUKCIJI.PREDMET_ID JOIN AUKCIJA ON AUKCIJA.ID=PREDMETI_NA_AUKCIJI.AUKCIJA_ID
+WHERE PREDMET.TIP='slika'
+MINUS
+SELECT  AUKCIJA.NAZIV,AUKCIJA.DATUM_OTVARANJA
+FROM PREDMET JOIN PREDMETI_NA_AUKCIJI ON PREDMET.ID=PREDMETI_NA_AUKCIJI.PREDMET_ID JOIN AUKCIJA ON AUKCIJA.ID=PREDMETI_NA_AUKCIJI.AUKCIJA_ID
+ WHERE PREDMET.TIP='skulptura';
